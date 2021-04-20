@@ -6,6 +6,7 @@ import {
   Jost_400Regular,
   Jost_600SemiBold
 } from '@expo-google-fonts/jost';
+import { AppearanceProvider } from 'react-native-appearance';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,6 +18,8 @@ export default function App() {
     return <AppLoading />
 
   return (
-    < Routes />
+    <AppearanceProvider>
+      < Routes />
+    </AppearanceProvider>
   );
 }

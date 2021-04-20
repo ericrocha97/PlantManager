@@ -7,26 +7,35 @@ import {
   StyleSheet,
   Dimensions,
   View,
+  StatusBar,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/core";
+import { useColorScheme } from 'react-native-appearance';
 
 import wateringImg from "../assets/watering.png";
-import colors from "../styles/colors";
 import fonts from "../styles/fonts";
-import { useNavigation } from "@react-navigation/core";
+import colors from "../styles/colors";
 
 export function Welcome() {
 
   const navigation = useNavigation();
 
+  const colorScheme = useColorScheme();
+
   function handleStart() {
     navigation.navigate('UserIdentification')
   }
 
+  const themeStatusBarStyle = colorScheme === 'light' ? 'dark-content' : 'light-content';
+  const themeTextStyle = colorScheme === 'light' ? styles.lightThemeText : styles.darkThemeText;
+  const themeContainerStyle = colorScheme === 'light' ? styles.lightContainer : styles.darkContainer;
+
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, themeContainerStyle]}>
+      <StatusBar translucent={true} backgroundColor="rgba(0,0,0,0)" barStyle={themeStatusBarStyle} />
       <View style={styles.wrapper}>
-        <Text style={styles.title}>
+        <Text style={[styles.title, themeTextStyle]}>
           Gerencie {"\n"}
           suas plantas de {"\n"}
           forma fácil
@@ -38,7 +47,7 @@ export function Welcome() {
           resizeMode="contain"
         />
 
-        <Text style={styles.subtitle}>
+        <Text style={[styles.subtitle, themeTextStyle]}>
           Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
           sempre que precisar.
         </Text>
@@ -58,6 +67,18 @@ export function Welcome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  lightContainer: {
+    backgroundColor: colors.background,
+  },
+  darkContainer: {
+    backgroundColor: colors.background_dark,
+  },
+  lightThemeText: {
+    color: colors.heading,
+  },
+  darkThemeText: {
+    color: colors.heading_dark,
   },
   wrapper: {
     flex: 1,

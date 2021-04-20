@@ -4,10 +4,12 @@ export default {
   green_light: '#DAF2E4',
 
   heading: '#52665A',
+  heading_dark: '#769181',
   body_dark: '#738078',
   body_light: '#AAB2AD',
 
   background: '#FFFFFF',
+  background_dark: '#121212',
   shape: '#F0F0F0',
   white: '#FFFFFF',
   gray: '#CFCFCF',
