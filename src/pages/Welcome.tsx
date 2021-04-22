@@ -14,6 +14,7 @@ import wateringImg from "../assets/watering.png";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 import { useNavigation } from "@react-navigation/core";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
 export function Welcome() {
 
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     textAlign: "center",
     color: colors.heading,
-    marginTop: 38,
+    marginTop: getStatusBarHeight(),
     fontFamily: fonts.heading,
     lineHeight: 34,
   },
