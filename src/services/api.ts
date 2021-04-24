@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: process.env.API_URL || 'http://192.168.0.102:3333'
+  baseURL: 'https://my-json-server.typicode.com/ericrocha97/PlantManager'
 })
 
 export default api;

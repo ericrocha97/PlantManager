@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   SafeAreaView,
   Text,
@@ -15,12 +15,15 @@ import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 import { useNavigation } from "@react-navigation/core";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import api from "../services/api";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export function Welcome() {
 
   const navigation = useNavigation();
 
-  function handleStart() {
+  async function handleStart() {
+    //await AsyncStorage.setItem('@plantmanager:plants', '')
     navigation.navigate('UserIdentification')
   }
 

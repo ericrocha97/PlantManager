@@ -42,6 +42,8 @@ export function PlantSelect() {
     setFilteredPlants(filtered);
   }
 
+
+
   async function fetchPlants() {
 
     const { data } = await api.get('plants', {
