@@ -17,7 +17,7 @@ const AuthRoutes: React.FC = () => {
         labelPosition: 'beside-icon',
         style: {
           height: 60,
-          paddingVertical: Platform.OS === 'ios' ? 20 : 0,
+          paddingVertical: Platform.OS === 'ios' ? 30 : 0,
         }
       }}
     >
